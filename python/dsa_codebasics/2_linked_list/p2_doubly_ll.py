@@ -64,9 +64,9 @@ class DoublyLL:
 if __name__ == "__main__":
     
     dll = DoublyLL()
-    dll.at_front(12)
-    dll.at_front(1)
     dll.at_front(3)
+    dll.at_front(2)
+    dll.at_front(1)
 
     dll.print_forward()
     dll.print_backward()
