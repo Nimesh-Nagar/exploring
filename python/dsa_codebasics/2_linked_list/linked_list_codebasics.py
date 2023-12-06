@@ -32,22 +32,6 @@ class Linkedlist:
 
         itr.next = Node(data, None)
          
-
-    # Print operation 
-    def printList(self):
-        if self.head is None:
-            print("Linked list is empty")
-            return
-        
-        itr = self.head
-        llstr = ""
-
-        while(itr):
-            llstr = llstr + str(itr.data) + "---> "
-            itr = itr.next
-
-        print(llstr)
-
     # Insert list of values 
     def insert_values(self, data_list):
         self.head = None
@@ -103,9 +87,65 @@ class Linkedlist:
 
             itr = itr.next
             count += 1
-      
+
+    # Search by value and insert data after 
+    def insert_after_value(self, data_after, data_to_insert):
+        # Search for first occurance of data_after value in linked list
+        # Now insert data_to_insert after data_after node
+        if self.head is None:
+            return
+        
+        #  to save space of temp_head 
+        if self.head.data == data_after:
+            self.head.next = Node(data_to_insert, self.head.next)
+            return
+        
+        temp = self.head 
+        while temp:
+            if temp.data == data_after:
+                new_node = Node(data_to_insert,temp.next)
+                temp.next = new_node
+                break
+
+            temp = temp.next
+
+    # Delete data by value
+    def remove_by_value(self, data):
+        # Remove first node that contains data
+        if self.head is None:
+            return
+        
+        if self.head.data == data:
+            self.head = self.head.next
+            return
+        
+        current = self.head
+        while current.next:     # iter. using addr.
+            if current.next.data == data:
+                current.next = current.next.next
+                break 
+
+            current = current.next
+        
+
+# Print operation 
+    def printList(self):
+        if self.head is None:
+            print("Linked list is empty")
+            return
+        
+        itr = self.head
+        llstr = ""
+
+        while(itr):
+            llstr = llstr + str(itr.data) + "---> "
+            itr = itr.next
+
+        print(llstr)
 
 if __name__ == "__main__":
+   
+    ''' 
     ll = Linkedlist()
 
     # ll.insert_at_begining(6)
@@ -116,6 +156,7 @@ if __name__ == "__main__":
     # ll.insert_at_end(765)
 
     ll.insert_values(["Banana","Mango","Apple","Grapes","Orange"])
+    print("Orginal Linked List ")
     ll.printList()
     print("Length of Linked List : ",ll.get_length())
 
@@ -123,11 +164,35 @@ if __name__ == "__main__":
     # # ll.remove_at(-2)  # invalid index
     # ll.printList()
 
-    ll.insert_at(0, "Figs")
-    ll.printList()
-    ll.insert_at(2, "Strawberry")
+    # print("\nInsert 'Figs' at position 1 ")
+    # ll.insert_at(1, "Figs")
+    # ll.printList()
+    # print("\nInsert 'Strawberry' at position 2 ")
+    # ll.insert_at(2, "Strawberry")
+    # ll.printList()
+    print("Add 'kiwi' after 'mango' ")
+    ll.insert_after_value("Mango","kiwi")
     ll.printList()
 
+    print("Delete 'kiwi' from list ")
+    ll.remove_by_value("kiwi")
+    ll.printList()
+    '''
 
-    
+    # Extersise Solutions 
+    ll = Linkedlist()
+    ll.insert_values(["banana","mango","grapes","orange"])
+    ll.printList()
+    ll.insert_after_value("mango","apple") # insert apple after mango
+    ll.printList()
+    ll.remove_by_value("orange") # remove orange from linked list
+    ll.printList()
+    ll.remove_by_value("figs")
+    ll.printList()
+    ll.remove_by_value("banana")
+    ll.remove_by_value("mango")
+    ll.remove_by_value("apple")
+    ll.remove_by_value("grapes")
+    ll.printList()
+
 
