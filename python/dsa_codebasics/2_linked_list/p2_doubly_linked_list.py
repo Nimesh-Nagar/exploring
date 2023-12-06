@@ -1,3 +1,4 @@
+""" Doubly Linked List Code """
 
 class Node:
     def __init__(self, data=None, next=None, prev=None):
@@ -31,6 +32,7 @@ class DoublyLL:
 # This function prints the contents of
 # the linked list starting from the head
 
+# Printing Doubly linked data in forward direction 
     def print_forward(self):
         if self.head is None:
             print("Linked list is empty")
@@ -43,6 +45,7 @@ class DoublyLL:
             current = current.next 
         print("\n")
 
+# Printing Doubly linked data in Reverse direction 
     def print_backward(self):
         if self.head is None:
             print("Linked list is empty")
