@@ -54,7 +54,7 @@ class LinkedList:
 # """ Insert at any Position """
     def insert_after(self, index, data):
         if index < 0 and index > self.get_length():
-            raise Exception("INdalid index")
+            raise Exception("Invalid index")
         
         if index == 0:
             self.insert_at_begining(data)
