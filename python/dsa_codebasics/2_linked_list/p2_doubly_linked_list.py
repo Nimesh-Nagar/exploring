@@ -12,7 +12,6 @@ class DoublyLL:
 
 
 # Adding a node at the front of the list
-
     def at_front(self,data):
         # 1 & 2: Allocate the Node & Put in the data
         new_node = Node(data)
@@ -68,9 +67,9 @@ if __name__ == "__main__":
     
     dll = DoublyLL()
     dll.at_front(4)
-    dll.at_front(3)
-    dll.at_front(2)
-    dll.at_front(1)
+    # dll.at_front(3)
+    # dll.at_front(2)
+    # dll.at_front(1)
 
     dll.print_forward()
-    dll.print_backward()
+    # dll.print_backward()
