@@ -6,7 +6,7 @@
 class HashTable:
     def __init__(self):
         self.MAX = 10
-        self.arr = [None for i in range(self.MAX)]
+        self.arr = [None for _ in range(self.MAX)]
 
     #hash function 
     def get_hash(self,key):    
@@ -17,7 +17,7 @@ class HashTable:
     
     def __setitem__(self,key,val):
         h = self.get_hash(key)
-        self.arr[h] = val
+        self.arr[h] = (key, val)
 
     def __getitem__(self,key):
         h = self.get_hash(key)
