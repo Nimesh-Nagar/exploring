@@ -39,35 +39,53 @@ class DoublyLL:
         if self.head is None:
             self.head = new_node
 
-        else:
-        # 5. Traverse to end and add node     
+        # 5. Traverse to end and add node 
+        else:    
             temp = self.head 
             while temp.next != None:
                 temp = temp.next
 
             new_node.prev = temp
             temp.next = new_node
-                    
-                
+                                    
 
 # Adding Node in Between Two Node (part1) after given node.
     def after_given(self, given_node, data):
+        
+        # find the given node's data 
         temp = self.head 
-        new_node = Node(data)
-
         while temp:
             if temp.data == given_node:
+                new_node = Node(data)
                 new_node.next = temp.next
                 new_node.prev = temp
                 temp.next = new_node
-                new_node.next.prev = new_node
+                if new_node.next is not None:
+                    new_node.next.prev = new_node
                 break
+            else:
+                temp = temp.next
+        
+# Delete Node 
+    def del_node(self,del_data):
+        itr = self.head 
+        while itr:
+            if itr.data == del_data:
+                if itr.prev == None:            # delete at front 
+                    self.head = itr.next 
+
+                elif itr.next != None:          # delete at middle
+                    itr.prev.next = itr.next 
+                    itr.next.prev = itr.prev 
+
+                elif itr.prev != None:          # dele at end 
+                    itr.prev.next = itr.next 
             
-            temp = temp.next
+            elif itr.next == None and itr.data != del_data:
+                print(f"Node with value {del_data} not Found !")
 
-
-
-
+            itr = itr.next
+         
 
 # This function prints the contents of
 # the linked list starting from the head
@@ -107,25 +125,27 @@ class DoublyLL:
 if __name__ == "__main__":
     
     dll = DoublyLL()
-    # dll.at_front(5)
-    # dll.at_front(3)
-    # dll.at_front(2)
-    # dll.at_front(1)
+    print("Adding at front")
+    dll.at_front(5)
+    dll.at_front(3)
+    dll.at_front(2)
+    dll.at_front(1)
 
-    # dll.print_forward()
+    dll.print_forward()
     # dll.print_backward()
 
-    # dll.after_given(3,4)
-    # dll.print_forward()
-
-    dll.at_end(6)
+    # dll.at_end(6)
     # dll.at_end(7)
-    dll.print_forward()    
+    # dll.print_forward()    
 
-    # dll.after_given(6,22)
+    print("Adding 22 after 3")
+    dll.after_given(3,22) # given data , new node data 
     dll.print_forward()
-    
 
-    
+    print("Deleting Node with data 2 ")
+    dll.del_node(2)
+    dll.print_forward()   
 
-
+    print("Deleting Node with data 55 ")
+    dll.del_node(55) 
+    dll.print_forward()
