@@ -27,6 +27,47 @@ class DoublyLL:
         # 5. move the head to point to the new node
         self.head = new_node
 
+# Insert at the end of the list 
+    def at_end(self,data):
+        # 1 & 2: Allocate the Node & Put in the data
+        new_node = Node(data)
+
+        # 3. Make next of new node NULL
+        new_node.next = None
+
+        # 4. check if any node is present or not 
+        if self.head is None:
+            self.head = new_node
+
+        else:
+        # 5. Traverse to end and add node     
+            temp = self.head 
+            while temp.next != None:
+                temp = temp.next
+
+            new_node.prev = temp
+            temp.next = new_node
+                    
+                
+
+# Adding Node in Between Two Node (part1) after given node.
+    def after_given(self, given_node, data):
+        temp = self.head 
+        new_node = Node(data)
+
+        while temp:
+            if temp.data == given_node:
+                new_node.next = temp.next
+                new_node.prev = temp
+                temp.next = new_node
+                new_node.next.prev = new_node
+                break
+            
+            temp = temp.next
+
+
+
+
 
 # This function prints the contents of
 # the linked list starting from the head
@@ -66,10 +107,25 @@ class DoublyLL:
 if __name__ == "__main__":
     
     dll = DoublyLL()
-    dll.at_front(4)
+    # dll.at_front(5)
     # dll.at_front(3)
     # dll.at_front(2)
     # dll.at_front(1)
 
-    dll.print_forward()
+    # dll.print_forward()
     # dll.print_backward()
+
+    # dll.after_given(3,4)
+    # dll.print_forward()
+
+    dll.at_end(6)
+    # dll.at_end(7)
+    dll.print_forward()    
+
+    # dll.after_given(6,22)
+    dll.print_forward()
+    
+
+    
+
+
