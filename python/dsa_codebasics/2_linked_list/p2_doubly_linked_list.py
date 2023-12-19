@@ -49,8 +49,8 @@ class DoublyLL:
             temp.next = new_node
                                     
 
-# Adding Node in Between Two Node (part1) after given node.
-    def after_given(self, given_node, data):
+# Adding Node in Between Two Node (part1) after given node (part 2) before given node.
+    def after_given(self, given_node, data): 
         
         # find the given node's data 
         temp = self.head 
@@ -78,14 +78,45 @@ class DoublyLL:
                     itr.prev.next = itr.next 
                     itr.next.prev = itr.prev 
 
-                elif itr.prev != None:          # dele at end 
+                elif itr.prev != None:          # delete at end 
                     itr.prev.next = itr.next 
             
             elif itr.next == None and itr.data != del_data:
                 print(f"Node with value {del_data} not Found !")
 
             itr = itr.next
-         
+            
+#insert after given node         
+    def insert_after(self, given_data, insert_data):
+        
+        new_node = Node(insert_data)
+
+        if self.head is None:
+            self.head = new_node
+        
+        else:
+            itr = self.head 
+            while itr:
+                if itr.data == given_data and itr.prev == None: # inserting at front
+                    new_node.next = self.head 
+                    new_node.prev = itr.prev
+                    itr.prev = new_node
+                    self.head = new_node 
+                
+                elif itr.data == given_data and itr.next != None:   # inserting at middle
+                    new_node.next = itr.next
+                    new_node.prev = itr.next.prev 
+                    itr.next = new_node
+                    new_node.next.prev = new_node
+                    
+                elif itr.data == given_data and itr.next == None: # inserting at end
+                    new_node.prev = itr
+                    itr.next = new_node
+                    
+                itr = itr.next
+                
+                
+
 
 # This function prints the contents of
 # the linked list starting from the head
@@ -131,21 +162,29 @@ if __name__ == "__main__":
     dll.at_front(2)
     dll.at_front(1)
 
+    print("DDL in Forward direction :")
     dll.print_forward()
+    # print("DDL in Backward direction :")
     # dll.print_backward()
 
     # dll.at_end(6)
     # dll.at_end(7)
     # dll.print_forward()    
 
-    print("Adding 22 after 3")
-    dll.after_given(3,22) # given data , new node data 
-    dll.print_forward()
+    # print("Adding 22 after 3")
+    # dll.after_given(3,22) # given data , new node data 
+    # dll.print_forward()
 
-    print("Deleting Node with data 2 ")
-    dll.del_node(2)
-    dll.print_forward()   
+    # print("Deleting Node with data 2 ")
+    # dll.del_node(2)
+    # dll.print_forward()   
 
-    print("Deleting Node with data 55 ")
-    dll.del_node(55) 
+    # print("Deleting Node with data 55 ")
+    # dll.del_node(55) 
+    # dll.print_forward()
+
+    print("Insert Node.data 77 after Node.data 5 ")
+    dll.insert_after(5,77) # given node , insert node  
     dll.print_forward()
+    # print("DDL in Backward direction :")
+    # dll.print_backward()
