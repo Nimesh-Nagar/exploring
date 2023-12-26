@@ -32,7 +32,7 @@ class Hashtable:
 
     def __delitem__(self, key):
         index = self.get_hash(key)
-        for idx, ele in enumerate(self.arr):
+        for ele in self.arr[index]:
             if ele[0] == key:
                 del self.arr[index]
 
