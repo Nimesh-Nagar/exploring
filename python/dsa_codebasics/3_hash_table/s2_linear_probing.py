@@ -87,15 +87,17 @@ if __name__ == "__main__":
     
     t["march 6"] = 180
     t["march 8"] = 122
-    t["march 10"] = 112
+    t["march 10"] = 32
     t["march 17"] = 10
     t["feb 22"] = 1
     t["feb 25"] = 23
     
     # t["feb 28"] = 56
-    
     print(t.arr)
     
     print(t["march 6"] )
+    
+    del t["march 10"]
+    print(t.arr)
 
     
