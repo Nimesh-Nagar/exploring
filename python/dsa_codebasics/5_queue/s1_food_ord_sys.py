@@ -10,6 +10,10 @@ class Queue:
         self.buffer.appendleft(value)
         
     def dequeue(self):
+        if len(self.buffer) == 0:
+            print("Queue is empty !")
+            return
+        
         return self.buffer.pop()
         
     def is_empty(self):
@@ -18,26 +22,33 @@ class Queue:
     def size(self):
         return len(self.buffer)
     
-q = Queue()
+order_queue = Queue()
 
 def place_ord(ords):
     
     for item in ords:
         print(f"Placing Order : {item}")
-        q.enqueue(item) 
+        order_queue.enqueue(item) 
         time.sleep(0.5)
        
     
 
 def serve_ord():
         
-    servered = q.size() 
+    servered = order_queue.size() 
     time.sleep(1)
     while servered != 0:      
-        print(q.dequeue())
-        servered = q.size()
+        print(order_queue.dequeue())
+        servered = order_queue.size()
         time.sleep(2)
 
+    # time.sleep(1)
+    # while True:
+    #     order = order_queue.dequeue()
+    #     print("Now serving: ",order)
+    #     time.sleep(2)
+        
+        
     
 if __name__ == "__main__":
     
@@ -48,7 +59,6 @@ if __name__ == "__main__":
     t2 = threading.Thread(target=serve_ord)
     
     t1.start()
-    # time.sleep(1)
     t2.start()
     
     t1.join()
