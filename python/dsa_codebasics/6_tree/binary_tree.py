@@ -8,7 +8,7 @@ Right-side contains elements greater than the current element.
 
 
 class BinarySearchTree:
-    def __init__(self,data):
+    def __init__(self, data):
         self.data = data
         self.left = None
         self.right = None 
@@ -48,6 +48,39 @@ class BinarySearchTree:
             elements += self.right.in_order_traversal()
 
         return elements
+    
+
+    # Pre-Order Traversal (Base - Left - Right)
+    def pre_order_traversal(self):
+        elements = []
+
+        # Base 
+        elements.append(self.data)
+
+        # Traverse Left
+        if self.left:
+            elements += self.left.pre_order_traversal()
+
+        # Traverse Right
+        if self.right:
+            elements += self.right.pre_order_traversal()
+
+        return elements 
+    
+    # Post-Order Traversal (Left - Right - Base)
+    def post_order_traversal(self):
+        elements = []
+
+        if self.left:
+            elements += self.left.post_order_traversal()
+        
+        if self.right:
+            elements += self.right.post_order_traversal()
+
+        elements.append(self.data)
+
+        return elements
+
     
     def search(self,val):
         if val == self.data:
@@ -91,12 +124,15 @@ if __name__ == "__main__":
     numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
     num_tree = build_tree(numbers)
     
-    print(num_tree.in_order_traversal()) # [1, 4, 9, 17, 18, 20, 23, 34]
+    print("In-Order : ",num_tree.in_order_traversal()) # [1, 4, 9, 17, 18, 20, 23, 34]
     print(num_tree.search(22))           # True or False 
 
 
+    print("Pre-Order : ",num_tree.pre_order_traversal())
+
+    print("Post-Order : ", num_tree.post_order_traversal())
 
 
 
 
-
+ 
