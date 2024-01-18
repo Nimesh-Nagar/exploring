@@ -99,7 +99,44 @@ class BinarySearchTree:
                 return self.right.search(val)
             else:
                 return False 
+            
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        
+        return self.left.find_min()
+    
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        
+        return self.right.find_max()
 
+
+    def delete_node(self,value):
+        if value < self.data:
+            if self.left: 
+                self.left  = self.left.delete_node(value)
+
+        elif value > self.data:
+            if self.right:
+                self.right = self.right.delete_node(value)
+
+        else:
+            if self.left is None and self.right is None:
+                return None
+            
+            if self.left is None:
+                return self.right
+            
+            if self.right is None:
+                return self.left
+            
+            min_val = self.right.find_min()
+            self.data = min_val 
+            self.right = self.right.delete_node(min_val)
+        
+        return self
 
 
 
@@ -117,7 +154,6 @@ if __name__ == "__main__":
 
     countries = ["India","Pakistan","Germany", "USA","China","India","UK","USA"]
     country_tree = build_tree(countries)
-
     print("UK is in the list? ", country_tree.search("UK"))
     print("Sweden is in the list? ", country_tree.search("Sweden"))
 
@@ -127,10 +163,14 @@ if __name__ == "__main__":
     print("In-Order : ",num_tree.in_order_traversal()) # [1, 4, 9, 17, 18, 20, 23, 34]
     print(num_tree.search(22))           # True or False 
 
-
     print("Pre-Order : ",num_tree.pre_order_traversal())
-
     print("Post-Order : ", num_tree.post_order_traversal())
+
+    num_tree.delete_node(20)
+    print("After Deleting Node 20 : ",num_tree.pre_order_traversal())
+
+    num_tree.delete_node(9)
+    print("After Deleting Node 9 : ",num_tree.pre_order_traversal())
 
 
 
