@@ -73,6 +73,18 @@ class BinaryTree:
         elements.append(self.data)
 
         return elements
+    
+    def find_min(self):
+        if self.left is None:
+            return self.data
+        
+        return self.left.find_min()
+    
+    def find_max(self):
+        if self.right is None:
+            return self.data
+        
+        return self.right.find_max()
 
 
 
@@ -89,7 +101,9 @@ if __name__ == "__main__":
     numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
     num_tree = build_tree(numbers)  
     
-    print("In-Order Traversal : ", num_tree.in_order_traversal())
-    print("Pre-Order Traversal : ", num_tree.pre_order_traversal())  
-    print("Post-Order Traversal : ", num_tree.pre_order_traversal())  
+    print("In-Order Traversal : ", num_tree.in_order_traversal())     # [1, 4, 9, 17, 18, 20, 23, 34]
+    print("Pre-Order Traversal : ", num_tree.pre_order_traversal())   # [17, 4, 1, 9, 20, 18, 23, 34]
+    print("Post-Order Traversal : ", num_tree.pre_order_traversal())  # [17, 4, 1, 9, 20, 18, 23, 34]
 
+    print("Minimum Value in Tree : ",num_tree.find_min())       # 1
+    print("Maximum Value in Tree : ",num_tree.find_max())       # 34
