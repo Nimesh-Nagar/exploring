@@ -89,5 +89,7 @@ if __name__ == "__main__":
     numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
     num_tree = build_tree(numbers)  
     
-    print(num_tree.in_order_traversal())
-    # print(num_tree.pre_order_traversal())  
+    print("In-Order Traversal : ", num_tree.in_order_traversal())
+    print("Pre-Order Traversal : ", num_tree.pre_order_traversal())  
+    print("Post-Order Traversal : ", num_tree.pre_order_traversal())  
+
