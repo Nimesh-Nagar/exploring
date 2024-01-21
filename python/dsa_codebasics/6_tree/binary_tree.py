@@ -99,7 +99,8 @@ class BinarySearchTree:
                 return self.right.search(val)
             else:
                 return False 
-            
+
+    # Find min , max values from Tree         
     def find_min(self):
         if self.left is None:
             return self.data
@@ -112,7 +113,7 @@ class BinarySearchTree:
         
         return self.right.find_max()
 
-
+    # Deleting Node from Tree 
     def delete_node(self,value):
         if value < self.data:
             if self.left: 
@@ -139,8 +140,6 @@ class BinarySearchTree:
         return self
 
 
-
-
 # to create a complete tree from values
 def build_tree(elements):
     root = BinarySearchTree(elements[0])
@@ -149,6 +148,10 @@ def build_tree(elements):
         root.add_child(elements[i])
 
     return root    
+
+
+
+
 
 if __name__ == "__main__":
 
@@ -172,7 +175,3 @@ if __name__ == "__main__":
     num_tree.delete_node(9)
     print("After Deleting Node 9 : ",num_tree.pre_order_traversal())
 
-
-
-
- 
