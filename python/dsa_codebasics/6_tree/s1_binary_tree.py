@@ -1,5 +1,5 @@
 """
-[17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
+[17, 4, 1, 20, 9, 23, 18, 34, 8, 4]
 """
 
 class BinaryTree:
@@ -98,12 +98,14 @@ def build_tree(elements):
 
 
 if __name__ == "__main__":
-    numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
+    numbers = [17, 4, 1, 20, 9, 23, 18, 34, 8, 4]
     num_tree = build_tree(numbers)  
     
-    print("In-Order Traversal : ", num_tree.in_order_traversal())     # [1, 4, 9, 17, 18, 20, 23, 34]
-    print("Pre-Order Traversal : ", num_tree.pre_order_traversal())   # [17, 4, 1, 9, 20, 18, 23, 34]
-    print("Post-Order Traversal : ", num_tree.pre_order_traversal())  # [17, 4, 1, 9, 20, 18, 23, 34]
+    print("In-Order Traversal : ", num_tree.in_order_traversal())     # [1, 4, 8, 9, 17, 18, 20, 23, 34]
+    print("Pre-Order Traversal : ", num_tree.pre_order_traversal())   
+    print("Post-Order Traversal : ", num_tree.post_order_traversal())  
+    # Level-Order ? 
+    # delete ? 
 
     print("Minimum Value in Tree : ",num_tree.find_min())       # 1
     print("Maximum Value in Tree : ",num_tree.find_max())       # 34
