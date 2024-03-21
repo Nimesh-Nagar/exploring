@@ -1,0 +1,15 @@
+
+body{
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+    background: linear-gradient(to bottom, lightgreen, lightblue);
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    text-align: center;
+}
+
+.gallery img{
+    width: 400px;
+    height: 250px;
+}
