@@ -51,7 +51,7 @@ async function getWeatherData(cityValue){
     }catch (error){
         weatherDataEl.querySelector('.icon').innerHTML = ""
         weatherDataEl.querySelector('.temperature').textContent = "";
-        weatherDataEl.querySelector('.description').textContent = "Error Occured ! Please Check the City Name" ;
+        weatherDataEl.querySelector('.description').textContent = "Error Occured ! Please Try Again Later" ;
         weatherDataEl.querySelector('.details').innerHTML = ""; 
 
 
