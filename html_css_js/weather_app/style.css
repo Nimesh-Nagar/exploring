@@ -2,13 +2,13 @@
 body{
     margin: 0;
     font-family: "Montserrat", "sans-serif";
-    background-color: lightgrey;
+    background-image: url("https://images.unsplash.com/photo-1534274988757-a28bf1a57c17?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
 
 }
 
 .container{
 
-    background-color: white;
+    background-color: lightgrey;
     box-shadow: 0 0 20px rgba(0,0,0,0.3);
     margin: 0 auto;
     margin-top: 50px;
@@ -85,7 +85,7 @@ form input[type="submit"]:hover{
 
 .details > div{
     padding: 20px;
-    background-color: lightgrey;
+    background-color: lightblue;
     margin: 10px;
 
     flex: 1;
