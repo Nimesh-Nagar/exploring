@@ -1,15 +1,28 @@
 const btnEl = document.getElementById('btn');
-const appEl = document.getElementById('app')
+const appEl = document.getElementById('app');
 
-function deleteNote(){
+getNotes().forEach((note)=>{
+    const noteEl = createNoteEl(note.id, note.content);
+    appEl.insertBefore(noteEl, btnEl);
+});
+
+function deleteNote(id , element ){
+    const notes = getNotes().filter((note)=>note.id != id);
+    saveNotes(notes)
+    appEl.removeChild(element)
     
 }
 
-function updateNote(){
+function updateNote(id, content){
+    const notes = getNotes();
+    const target = notes.filter((note)=> note.id == id)[0];
+    target.content = content;
+    saveNotes(notes); 
+
 
 }
 
-function createNodeEl(id, content){
+function createNoteEl(id, content){
     const element = document.createElement("textarea")
     element.classList.add("note")
     element.placeholder = "Element Note"
@@ -18,7 +31,7 @@ function createNodeEl(id, content){
     element.addEventListener("dblclick", ()=>{
         const warning = confirm("Do you want to Delete this Note ?")
         if(warning){
-            deleteNote(id. element)
+            deleteNote(id, element)
         }
     })
 
@@ -38,7 +51,7 @@ function addNote(){
         content : ""
     };
 
-    const noteEl = createNodeEl(noteObj.id, noteObj.content)
+    const noteEl = createNoteEl(noteObj.id, noteObj.content)
 
     appEl.insertBefore(noteEl, btnEl);
     notes.push(noteObj);
