@@ -4,7 +4,7 @@ const resetEl = document.getElementById("reset")
 const timerEl = document.getElementById("timer")
 
 let interval;
-let timeLeft = 10;  // Start Time for pomodoro 
+let timeLeft = 1500;  // Start Time for pomodoro in seconds
 
 function updateTimer(){
     let minutes = Math.floor(timeLeft / 60);
