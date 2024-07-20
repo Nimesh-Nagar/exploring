@@ -22,7 +22,7 @@ for line in file:
     except:
         print("invalid temp ignore ROW")
         
-print(sum(arr[0:7])/len(arr[0:7]))
+print("average temperature : ",sum(arr[0:7])/len(arr[0:7]))
 
-print(max(arr[:]))
+print("maximum temperature : ",max(arr[:]))
 
