@@ -34,8 +34,7 @@ def register(request):
 
 def custom_logout_view(request):
     logout(request)
-    # Redirect to a success page or home page
-    return redirect(reverse('login'))  # or use 'login' if you want to redirect to the login page
+    return render(request, 'users/logout.html') 
 
 @login_required
 def profile(request):
