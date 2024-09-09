@@ -38,4 +38,4 @@ def generate_client(device_name, client_name):
 
 
 # enter "certificate file name" and "settings options" as arguments
-generate_client(device_name="rpi", client_name="Client2")
+generate_client(device_name="rpi", client_name="ECU1")
