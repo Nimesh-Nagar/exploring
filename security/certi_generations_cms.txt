@@ -19,7 +19,63 @@ openssl genrsa -out device.key 2048
 openssl req -new -key device.key -out device.csr
 openssl x509 -req -in device.csr -CA intermediateCA.crt -CAkey intermediateCA.key -CAcreateserial -out device.crt -days 365 -sha256
 
-=====================================================================================================================================
+=================================================================================================================================RSA 4096
+
+1. Generating Root CA Certificates
+openssl genrsa -out rootCA.key 4096
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 3650 -out rootCA.crt
+
+2. Generating Intermediate CA Certificates 
+openssl genrsa -out intermediateCA.key 4096
+openssl req -new -key intermediateCA.key -out intermediateCA.csr
+openssl x509 -req -in intermediateCA.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out intermediateCA.crt -days 1825 -sha256
+
+3. Generating server Certificates
+openssl genrsa -out server.key 2048
+openssl req -new -key server.key -out server.csr
+openssl x509 -req -in server.csr -CA intermediateCA.crt -CAkey intermediateCA.key -CAcreateserial -out server.crt -days 365 -sha256
+
+4. Generating device Certificates
+openssl genrsa -out device.key 2048
+openssl req -new -key device.key -out device.csr
+openssl x509 -req -in device.csr -CA intermediateCA.crt -CAkey intermediateCA.key -CAcreateserial -out device.crt -days 365 -sha256
+
+=============================================================================================================================
+=============================================================================================================================
+
+1. Generate the Root CA Certificate (ECC)
+Choose an appropriate elliptic curve (e.g., secp384r1, prime256v1).
+
+openssl ecparam -genkey -name secp384r1 -out rootCA.key
+openssl req -x509 -new -nodes -key rootCA.key -sha256 -days 3650 -out rootCA.crt
+
+2.
+openssl ecparam -genkey -name secp384r1 -out intermediateCA.key
+openssl req -new -key intermediateCA.key -out intermediateCA.csr
+openssl x509 -req -in intermediateCA.csr -CA rootCA.crt -CAkey rootCA.key -CAcreateserial -out intermediateCA.crt -days 1825 -sha256
+
+3.
+openssl ecparam -genkey -name secp384r1 -out server.key
+openssl req -new -key server.key -out server.csr
+openssl x509 -req -in server.csr -CA intermediateCA.crt -CAkey intermediateCA.key -CAcreateserial -out server.crt -days 365 -sha256
+
+4.
+openssl ecparam -genkey -name secp384r1 -out device.key
+openssl req -new -key device.key -out device.csr
+openssl x509 -req -in device.csr -CA intermediateCA.crt -CAkey intermediateCA.key -CAcreateserial -out device.crt -days 365 -sha256
+
+
+=============================================================================================================================
+Recreate the Certificate Chain
+cat intermediateCA.crt rootCA.crt > chain.crt
+
+Verify the Device Certificate Again
+Now, try verifying the device certificate against the corrected certificate chain:
+openssl verify -CAfile chain.crt device.crt
+
+
+
+
 ======================================================================================================================================
 
 1. Generate the Root CA Certificate (ECC)
