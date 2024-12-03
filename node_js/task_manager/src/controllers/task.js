@@ -1,10 +1,13 @@
+import { Task } from "../models/tasks.model.js";
 
 const getAllTask = (req, res) => {
     res.send("All Task list...")
 }
 
-const createTask = (req, res) => {
-    res.json(req.body)
+const createTask = async (req, res) => {
+    const task = await Task.create(req.body)
+    res.status(201).json({ task })
+
     console.log(req.body)
 }
 
