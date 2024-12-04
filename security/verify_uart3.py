@@ -139,3 +139,5 @@ if __name__ == "__main__":
     # Verify the device certificate if received successfully
     if device_cert_path:
         verify_certificate_chain(device_cert_path, ca_certificates)
+
+        
