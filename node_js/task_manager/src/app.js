@@ -9,16 +9,18 @@ dotenv.config();
 const app = express();
 
 //middleware
+// console.log("-----------------------------------")
+app.use(express.static("./public"))
 app.use(express.json());
 
 //routes
-app.get("/hello", (req, res) => {
-    res.send(`<h1> Task Manager App is Running </h1>`);
-});
+// app.get("/hello", (req, res) => {
+//     res.send(`<h1> Task Manager App is Running </h1>`);
+// });
 
 app.use("/api/v1/tasks", tasks)
     
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 const mongoUrl = process.env.MONGO_URL;
 
 const start = async () => {
