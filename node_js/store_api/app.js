@@ -4,15 +4,15 @@ require('dotenv').config()
 const express = require('express');
 const app = express();
 
+//middleware
+app.use(express.json())
 const notFoundMiddleware = require('./middleware/not-found');
 const errorMiddleware = require('./middleware/error-handler');
 
 const connectDB = require("./db/connect")
 const products = require("./routes/products.routes.js")
 
-//middleware
-app.use(express.json())
-
+// read data fron env variables
 const port = process.env.PORT || 3000;
 const mongo_url = process.env.MONGO_URI; 
 
