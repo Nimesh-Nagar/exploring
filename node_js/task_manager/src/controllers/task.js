@@ -2,8 +2,8 @@ import { Task } from "../models/tasks.model.js";
 
 const getAllTask = async (req, res) => {
     try {
-        const getTask = await Task.find(req.body)
-        res.status(200).json( {getTask} )
+        const tasks = await Task.find(req.body)
+        res.status(200).json( {tasks} )
         
     } catch (error) {
         res.status(500).json( {msg : error} )
