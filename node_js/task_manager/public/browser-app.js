@@ -7,6 +7,7 @@ const formAlertDOM = document.querySelector('.form-alert')
 const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
   try {
+    console.log(formDOM)
     const {
       data: { tasks },
     } = await axios.get('/api/v1/tasks')
@@ -19,10 +20,8 @@ const showTasks = async () => {
       .map((task) => {
         const { completed, _id: taskID, name } = task
         return `<div class="single-task ${completed && 'task-completed'}">
-<h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
-<div class="task-links">
-
-
+        <h5><span><i class="far fa-check-circle"></i></span>${name}</h5>
+        <div class="task-links">
 
 <!-- edit link -->
 <a href="task.html?id=${taskID}"  class="edit-link">
@@ -37,7 +36,9 @@ const showTasks = async () => {
       })
       .join('')
     tasksDOM.innerHTML = allTasks
+
   } catch (error) {
+    console.error('Fetch error:', error.response?.status, error.response?.data, error.message);
     tasksDOM.innerHTML =
       '<h5 class="empty-list">There was an error, please try later....</h5>'
   }
