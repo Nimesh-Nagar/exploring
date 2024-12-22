@@ -24,7 +24,7 @@ const login = (req,res) => {
     const token = jwt.sign({ id, username }, process.env.JWT_SECRET, {
         expiresIn: '30d',
     })
-
+    
     res.status(200).json({ msg: 'user created', token})
 
 }
