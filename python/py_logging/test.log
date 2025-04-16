@@ -1,0 +1,11 @@
+2024-10-19 20:25:10,913:INFO: Add : 20 + 10 = 30
+2024-10-19 20:25:10,915:INFO: Sub : 20 - 10 = 30
+2024-10-19 20:27:18,051:DEBUG: Add : 20 + 10 = 30
+2024-10-19 20:27:18,051:DEBUG: Sub : 20 - 10 = 30
+
+2024-10-19 20:40:22,898:ERROR:Tried to divide by Zero
+Traceback (most recent call last):
+  File "d:\iot_resources\exploring\python\py_logging\sample_log.py", line 49, in divide
+    result = x / y
+             ~~^~~
+ZeroDivisionError: division by zero
