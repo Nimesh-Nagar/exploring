@@ -26,7 +26,10 @@ app.use("*", (req, res) => {
 })
     
 const port = process.env.PORT || 3000;
-const mongoUrl = process.env.MONGO_URL;
+const mongoUrl = process.env.MONGO_URI;
+
+console.log(port)
+console.log(mongoUrl)
 
 const start = async () => {
     try{
