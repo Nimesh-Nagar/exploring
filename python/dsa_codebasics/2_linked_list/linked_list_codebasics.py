@@ -145,20 +145,20 @@ class Linkedlist:
 
 if __name__ == "__main__":
    
-    ''' 
+    # ''' 
     ll = Linkedlist()
 
-    # ll.insert_at_begining(6)
-    # ll.insert_at_begining(88)
+    ll.insert_at_begining(6)
+    ll.insert_at_begining(88)
 
-    # ll.insert_at_end(21)
-    # ll.insert_at_end(4743)
-    # ll.insert_at_end(765)
+    ll.insert_at_end(21)
+    ll.insert_at_end(4743)
+    ll.insert_at_end(765)
 
-    ll.insert_values(["Banana","Mango","Apple","Grapes","Orange"])
-    print("Orginal Linked List ")
-    ll.printList()
-    print("Length of Linked List : ",ll.get_length())
+    # ll.insert_values(["Banana","Mango","Apple","Grapes","Orange"])
+    # print("Orginal Linked List ")
+    # ll.printList()
+    # print("Length of Linked List : ",ll.get_length())
 
     # ll.remove_at(2)
     # # ll.remove_at(-2)  # invalid index
@@ -170,16 +170,16 @@ if __name__ == "__main__":
     # print("\nInsert 'Strawberry' at position 2 ")
     # ll.insert_at(2, "Strawberry")
     # ll.printList()
-    print("Add 'kiwi' after 'mango' ")
-    ll.insert_after_value("Mango","kiwi")
+    # print("Add 'kiwi' after 'mango' ")
+    # ll.insert_after_value("Mango","kiwi")
+    # ll.printList()
+
+    # print("Delete 'kiwi' from list ")
+    # ll.remove_by_value("kiwi")
     ll.printList()
 
-    print("Delete 'kiwi' from list ")
-    ll.remove_by_value("kiwi")
-    ll.printList()
     '''
-
-    # Extersise Solutions 
+    # Exersise Solutions 
     ll = Linkedlist()
     ll.insert_values(["banana","mango","grapes","orange"])
     ll.printList()
@@ -195,4 +195,4 @@ if __name__ == "__main__":
     ll.remove_by_value("grapes")
     ll.printList()
 
-
+    ''' 
