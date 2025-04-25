@@ -128,9 +128,9 @@ class DoublyLL:
             return
         
         current = self.head 
-        print("", end=" ---> ")
+        print("", end=" <---> ")
         while current:
-            print(current.data, end=" ---> ")
+            print(current.data, end=" <---> ")
             current = current.next 
         print("\n")
 
@@ -141,13 +141,13 @@ class DoublyLL:
             return
         
         temp = self.head
-        print("", end=" ---> ")
+        print("", end=" <---> ")
         while temp:
             rev=temp           # copy addr, of temp_head to rev_head 
             temp = temp.next   # copy next addr. till addr become null
 
         while rev != self.head.prev:
-            print(rev.data, end=" ---> ")
+            print(rev.data, end=" <---> ")
             rev = rev.prev
         print("\n")
 
@@ -156,7 +156,7 @@ class DoublyLL:
 if __name__ == "__main__":
     
     dll = DoublyLL()
-    print("Adding at front")
+    print("\nAdding at front")
     dll.at_front(5)
     dll.at_front(3)
     dll.at_front(2)
@@ -167,24 +167,25 @@ if __name__ == "__main__":
     # print("DDL in Backward direction :")
     # dll.print_backward()
 
-    # dll.at_end(6)
-    # dll.at_end(7)
-    # dll.print_forward()    
+    print("Adding at End")
+    dll.at_end(6)
+    dll.at_end(7)
+    dll.print_forward()    
 
-    # print("Adding 22 after 3")
-    # dll.after_given(3,22) # given data , new node data 
-    # dll.print_forward()
+    print("Adding 22 after 3")
+    dll.after_given(3,22) # given data , new node data 
+    dll.print_forward()
 
-    # print("Deleting Node with data 2 ")
-    # dll.del_node(2)
-    # dll.print_forward()   
+    print("Deleting Node with data 2 ")
+    dll.del_node(2)
+    dll.print_forward()   
 
-    # print("Deleting Node with data 55 ")
-    # dll.del_node(55) 
-    # dll.print_forward()
+    print("Deleting Node with data 55 ")
+    dll.del_node(55) 
+    dll.print_forward()
 
     print("Insert Node.data 77 after Node.data 5 ")
     dll.insert_after(5,77) # given node , insert node  
     dll.print_forward()
-    # print("DDL in Backward direction :")
-    # dll.print_backward()
+    print("DDL in Backward direction :")
+    dll.print_backward()
