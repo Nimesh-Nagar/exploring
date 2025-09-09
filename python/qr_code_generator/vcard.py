@@ -2,7 +2,7 @@ import qrcode
 import os
 
 # Create a QR code object
-qr = qrcode.QRCode(version=1, box_size=10, border=5)
+qr = qrcode.QRCode(version=1, box_size=5, border=5)
 
 # Define the vCard data
 vcard = """BEGIN:VCARD
@@ -29,6 +29,6 @@ img = qr.make_image(fill_color="black", back_color="white")
 dir_name = "QR_codes"
 os.makedirs(dir_name, exist_ok=True)
 
-path = os.path.join(dir_name, "qr_code_vcard.png")
+path = os.path.join(dir_name, "Nimesh_vcard.png")
 
 img.save(path)
