@@ -1,0 +1,22 @@
+2025-04-16 11:31:57,280 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\application (2).bin -> D:\iot_resources\exploring\python\file_organiser\test\Others\application (2).bin
+2025-04-16 11:31:57,281 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\application (3).bin -> D:\iot_resources\exploring\python\file_organiser\test\Others\application (3).bin
+2025-04-16 11:31:57,282 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\connect_device_package.zip -> D:\iot_resources\exploring\python\file_organiser\test\Archives\connect_device_package.zip
+2025-04-16 11:31:57,282 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\Design 5.png -> D:\iot_resources\exploring\python\file_organiser\test\Images\Design 5.png
+2025-04-16 11:31:57,284 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\Design 7.png -> D:\iot_resources\exploring\python\file_organiser\test\Images\Design 7.png
+2025-04-16 11:31:57,285 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\DHARAM AGENCIES DOCS.zip -> D:\iot_resources\exploring\python\file_organiser\test\Archives\DHARAM AGENCIES DOCS.zip
+2025-04-16 11:31:57,285 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\Edge of Tomorrow 2014 BluRay 1080p DTS AC3 x264-3Li.mkv -> D:\iot_resources\exploring\python\file_organiser\test\Videos\Edge of Tomorrow 2014 BluRay 1080p DTS AC3 x264-3Li.mkv
+2025-04-16 11:31:57,286 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\firmware.html -> D:\iot_resources\exploring\python\file_organiser\test\Others\firmware.html
+2025-04-16 11:31:57,286 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\GYQPS0815F_PARTB_2024-25.pdf -> D:\iot_resources\exploring\python\file_organiser\test\Documents\GYQPS0815F_PARTB_2024-25.pdf
+2025-04-16 11:31:57,287 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\Infineon-AN229058_-_Secured_firmware_over-the-air_FOTA_update_in_TRAVEO_T2G_MCU-ApplicationNotes-v05_00-EN.pdf -> D:\iot_resources\exploring\python\file_organiser\test\Documents\Infineon-AN229058_-_Secured_firmware_over-the-air_FOTA_update_in_TRAVEO_T2G_MCU-ApplicationNotes-v05_00-EN.pdf
+2025-04-16 11:31:57,287 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\LeaveCard.pdf -> D:\iot_resources\exploring\python\file_organiser\test\Documents\LeaveCard.pdf
+2025-04-16 11:31:57,287 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\LeaveCard_2.pdf -> D:\iot_resources\exploring\python\file_organiser\test\Documents\LeaveCard_2.pdf
+2025-04-16 11:31:57,287 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\Notion Setup 4.1.2.exe -> D:\iot_resources\exploring\python\file_organiser\test\Others\Notion Setup 4.1.2.exe
+2025-04-16 11:31:57,288 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\version.txt -> D:\iot_resources\exploring\python\file_organiser\test\Documents\version.txt
+2025-04-16 11:31:57,288 - INFO - File organization completed.
+2025-04-16 11:33:51,464 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\application (2).bin -> D:\iot_resources\exploring\python\file_organiser\test\Applications\application (2).bin
+2025-04-16 11:33:51,465 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\application (3).bin -> D:\iot_resources\exploring\python\file_organiser\test\Applications\application (3).bin
+2025-04-16 11:33:51,465 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\firmware.html -> D:\iot_resources\exploring\python\file_organiser\test\Others\firmware.html
+2025-04-16 11:33:51,466 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\Notion Setup 4.1.2.exe -> D:\iot_resources\exploring\python\file_organiser\test\Applications\Notion Setup 4.1.2.exe
+2025-04-16 11:33:51,466 - INFO - File organization completed.
+2025-04-16 11:44:50,281 - INFO - Moved: D:\iot_resources\exploring\python\file_organiser\test\firmware.html -> D:\iot_resources\exploring\python\file_organiser\test\Others\firmware_1.html
+2025-04-16 11:44:50,281 - INFO - File organization completed.
