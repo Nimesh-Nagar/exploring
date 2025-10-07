@@ -83,5 +83,7 @@ if __name__ == "__main__":
     
     queue.deQueue()
     queue.deQueue()
+    # print(queue.arr) 
+
     
     

@@ -70,6 +70,32 @@ class LinkedList:
             temp = temp.next
             count += 1
 
+# """ Delete at Beginning """ 
+    def remove_at_beginning(self):
+        if self.head is None:
+            print("Linked List is Empty")
+            return
+        
+        temp = self.head
+        self.head = self.head.next
+
+        del temp
+
+# """ Delete at End """ 
+    def remove_at_end(self):
+        if self.head is None:
+            print("Linked List is Empty")
+            return
+        if self.head.next is None:
+            del self.head
+
+        second_last = self.head
+        while second_last.next.next:
+            second_last = second_last.next
+        
+        second_last.next = None
+
+
 # """ Delete from any Index """ 
     def remove_at(self, index):
         if index < 0  and index > self.get_length():
@@ -126,8 +152,14 @@ if __name__ == "__main__":
     ll.insert_after(3,35) # postion, data
     ll.printList()
 
-    print("\n Delete 2nd index linked list")
-    ll.remove_at(2)
+    print("\nDelete at Beginning ")
+    ll.remove_at_beginning()
     ll.printList()
 
-    
+    print("\nDelete at End")
+    ll.remove_at_end()
+    ll.printList()
+
+    print("\nDelete 2rd index in linked list")
+    ll.remove_at(2)
+    ll.printList()
