@@ -21,6 +21,7 @@ env.bak/
 venv.bak/
 f_app/ 
 vir_env/
+myenv/
 
 # Distribution / packaging
 .Python
