@@ -32,9 +32,11 @@ Contact
 
 About me
 
-I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media. I enjoy turning complex problems into simple, beautiful and intuitive designs.
+I'm Nimesh Nagar, an IoT Software Engineer passionate about building secure, scalable connected systems. I specialize in edge-to-cloud solutions, working across embedded devices, cloud infrastructure, and everything in between.
 
-My job is to build your website so that it is functional and user-friendly but at the same time attractive. Moreover, I add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring across your message and identity in the most creative way. I created web design for many famous brand companies.
+My expertise includes developing IoT applications with Raspberry Pi and ESP32, designing serverless architectures on AWS, and implementing secure communication protocols like MQTT. I focus on creating systems that are reliable, maintainable, and built with security at their core.
+
+I love solving complex problems—whether it's real-time data processing, automated deployments, or integrating hardware with cloud platforms. My goal is to build IoT solutions that transform data into actionable insights and deliver real business value.
 
 
 ## service

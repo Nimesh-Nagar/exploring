@@ -155,15 +155,18 @@ def build_tree(elements):
 
 if __name__ == "__main__":
 
-    countries = ["India","Pakistan","Germany", "USA","China","India","UK","USA"]
+    countries = ["India","Poland","Germany", "USA","China","India","UK","USA"]
+
+    # strings are compared based on their ASCII values. i.e. A-Z < a-z
     country_tree = build_tree(countries)
     print("UK is in the list? ", country_tree.search("UK"))
     print("Sweden is in the list? ", country_tree.search("Sweden"))
+    print("In-Order : ",country_tree.in_order_traversal()) # ['China', 'Germany', 'India', 'Poland', 'UK', 'USA']
 
-    numbers = [17, 4, 1, 20, 9, 23, 18, 34, 18, 4]
+    numbers = [17, 4, 1, 20, 9, 23, 18, 34, 19, 4]
     num_tree = build_tree(numbers)
     
-    print("In-Order : ",num_tree.in_order_traversal()) # [1, 4, 9, 17, 18, 20, 23, 34]
+    print("In-Order : ",num_tree.in_order_traversal()) # [1, 4, 9, 17, 18, 19, 20, 23, 34]
     print(num_tree.search(22))           # True or False 
 
     print("Pre-Order : ",num_tree.pre_order_traversal())

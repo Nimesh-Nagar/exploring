@@ -86,7 +86,7 @@ const getAllProducts = async (req, res) =>{
     
     result = result.skip(skip).limit(limit) 
     // eg. we have 23 products
-    // limit is 7 number of pages required ?
+    // limit is 7 items, number of pages required ?
     // 7,7,7,2 = 4 pages
 
     const products = await result
